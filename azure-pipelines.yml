@@ -23,7 +23,7 @@ steps:
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'drop'
-    targetPath: '$(Build.ArtifactStagingDirectory)'
+    targetPath: '$(System.DefaultWorkingDirectory)/build'
 
 #- task: AzureRmWebAppDeployment@4
 #  inputs:
