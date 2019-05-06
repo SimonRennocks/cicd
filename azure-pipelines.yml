@@ -19,3 +19,12 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'AzureResManagerConn'
+    appType: 'webApp'
+    WebAppName: 'ci101'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/build'
+
